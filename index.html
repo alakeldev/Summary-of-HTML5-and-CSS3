@@ -1,12 +1,170 @@
 <!DOCTYPE html>
+<!-- 
+    DOCTYPE is insturctions give to the browser to let it know which HTML version i'm working with 
+    why DOCTYPE is Important => the browser make render to the website so we can see the page in two modes:
+    - Quirks mode (if you don't write the DOCTYPE so the browser will apply it by default)
+    - Standards mode (when we write the DOCTYPE instructions, it's neccessary to render the page in Standards mode)
+-->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Meta is self closing tag, we use attributes inside it(charset="UTF-8" support all languages)
+        the (charset="ISO-8859-1" is not support arabic language)-->
+    <meta name="description" content="This is online cars store"> <!-- you gonna see the description will appear on google search 
+        below the title of page website -->
+    <meta name="copyright" content="My Company or Brand or Logo Name">
+    <!-- You gonna tell the user that you have copyright on the content -->
+    <meta name="author" content="Alakel"> <!-- You gonna tell the user who write the content in this page/website -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Some of Websites have special meta related to this website -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- rel => relationship the file with this page, href => the file location -->
+    <!-- inside the style tag you can write a CSS code to apply it on the page elements-->
+    <style></style>
+    <!-- inside the script tag you can write a JS code to apply it on the website -->
+    <script></script>
+    <!--Page title -->
     <title>HTML5 & CSS3</title>
 </head>
+
 <body>
+    <!-- shortcut to apply a comment [press Ctrl + key(#')] single line comment also Multiple lines comment -->
+    <!-- 
+        HTML5 => Hypertext Markup Language (Version 5)
+        - It's the main Language to Build the Web
+        - We use it in => (Front-End - Back-End - Mobile-Developer - Reports)
+    -->
+
+    <!--
+        Syntax:
+        - The browser will ignore the empty spaces between words if you write direct inside body element without using the html elements
+        - if the element has too much attributes you can orgnize it and put each attribute in line and next line write the next attribute
+        - you can write the value of attrbiutes between single qoute '' or double qoute "" , it's the same thing.
+    -->
+
+    <!-- 
+        Headings: h1 ===> h6
+        - The best Way and practice to use h1 only one time in your page
+        - the best way to use the heading as hierarchy mode it most be using h1 then h2 then h3 then h4
+        <h1> Online Cars Store </h1> when you write h1 so in this header will apply [user agent stylesheet] => (browser default style element)
+        <h2> </h2>
+        <h3> </h3>
+        <h4> </h4>
+        <h5> </h5>
+        <h6> </h6>
+    -->
+
+    <!--
+        Paragraph element: it's block element by default     - the browser default style element (user agent stylesheet) check it on dev tools
+        <p>My BMW car </p> <p>My KIA car </p>   // My BMW car
+                                                // My KIA car
+    -->
+
+    <!-- 
+        Attributes ===> each html element has attributes, attribute has two type 
+        - Global Attributes: you can use it in all html elements what ever its type such as:       class, hidden, id
+        - Element Attributes: you can use it only in specific element such as:       <img src="" alt="">,     <a href=""> <a/>
+    -->
+
+    <!-- 
+        Formating through HTML without using CSS:
+        <b> </b> => Bold to make words Bold type inside paragraph
+        <strong> </strong> => same Bold but the difference (the strong is Important text not only Bold text)
+
+        <i> </i> => Italic style font
+        <em> </em> => same Italic style font but the difference (em is Important text not only italic style)
+
+        <mark> </mark> => make highlight on words inside the text or paragraph
+
+        <u> </u> => underline words to make underline words
+
+        <small> </small> =>smaller text-words if you want to make some words inside paragraph a littel bit small than other wirds inside text
+
+        <del> </del> => to delete some words or parts of my paragraph it will make a line on this text to show to user that it is deleted
+
+        <ins> </ins> => Inserted text it will put underline to show that this text or words inside the paragraph was added new to it
+
+        <sub> </sub> => H<sub>2</sub>O      // H2O  but the 2 go small and down
+
+        <sup </sup> => 2 power 2   2<sup>2</sup>    // 2 power 2 = 4
+    -->
+
+    <!--
+        Anchor tag a:  is inline element
+        <a href="https://facebook.com" target="_blank" title="Go TO facebook">Facebook</a>   // attribute href = heypertext reference , target ="_blank" it means
+        that open in new browser window , title attribute is global attribute when you stay the curosor on link so the title will appear
+
+        - a element can take you to another page from your website or to another website different from yours
+        - a element can take you to specific part inside your page through set id to this part
+
+    Example:    <a href="#go-to-here"> go to specific part inside same page</a>
+                <p id="go-to-here"></p>
+        - a element can take you to Email specific email: 
+    Example: 
+                <a href="mailto:abdullah.alakel@gmail.com">Contact Me</a>
+    -->
+
+    <!--
+        image tag/element:
+        <img src="" alt="my-logo">      // src = image path - image location   alt = alternative text that will show if the image not loaded
+                                        // width and height attributes inside image it's not best practice to use it inside html the better
+                                        to use it inside css
+    -->
+
+    <!--
+        Lists: three types of lists:    user agent stylesheet give the lists style by default
+
+        ul => Unordered list , li => list item
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+        </ul>
+
+        Nested ul:
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>
+                JS
+            <ul>
+                <li>Angular</li>
+                <li>Node.JS</li>
+                <li>React</li>
+            </ul>
+            </li>
+        </ul>
+
+
+
+        ol => ordered list , li => list item
+        // attributes: reversed => reverse the ordering,   start="100" => start ordering from position,    type="I" or "a"...=> type of ordering
+        <ol> 
+            <li value="50">HTML</li>  if we set attribute value it will behaviour same as start attribute inside ol tag
+            <li>CSS</li>
+            <li>JS</li>
+        </ol>
+
+
+
+
+        dl => description list
+        dt => Term-Part-Point
+        dd => desctiption of the Term - Part -Point
+        <dl>
+            <dt>HTML</dt>
+            <dd>Web Language</dd>
+            <dd>the first Langauge</dd>
+            <dt>CSS</dt>
+            <dd>Style Language</dd>
+        </dl>
+    -->
     
+    <!--
+        table part:
+    
+        <table></table>
+    -->
 </body>
+
 </html>
