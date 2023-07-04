@@ -161,9 +161,103 @@
     -->
     
     <!--
-        table part:
-    
-        <table></table>
+        table part: it has same the page elements (header ,body, footer)
+                            thead
+                            tbody
+                            tfoot
+                            tr => table row
+                            tb => table data
+                            th => table header cell data 
+                            caption => table title you can write here to make different between table and table like table june another one july
+                            colspan => to merge multiple cols
+    Example:
+        <table>
+            <caption>Students Details</caption>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abdullah</td>
+                    <td>Alakel</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Abdullah</td>
+                    <td>Alakel</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Abdullah</td>
+                    <td>Alakel</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Abdullah</td>
+                    <td>Alakel</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td clospan="3">End</td>
+                </tr>
+            </tfoot>
+        </table>
+    -->
+
+
+    <!--
+        span / break / horizintal row
+
+        <span>Hello</span> : inline element, there is not style inside user agent stylesheet no default style at all
+        
+        <br />: new line break
+
+        <hr>: to make Horizintal row and it's block element - it has user agent stylesheet default style
+
+    -->
+
+    <!--
+        div (the most important element), it's a container for other elements and you can say the div is a part from your page
+        <div>
+
+        </div>
+    -->
+
+    <!--
+        HTML entities:
+        <div>This Is My <p> Div</div>   // This Is My
+                                        //Div
+        I want to print the <p> exactly:
+        <div>This Is My &lt;p&gt; Div</div>    //  This Is My <p> Div
+        <div>This Is My &lt;p&gt; Div</div> &amp;   //  This Is My <p> Div &
+        * check for other entities like copy right...etc,,,, search on html entities and you get a list about these entities
+    -->
+
+    <!--
+        Semantic Elements: All these elements are 'Block Elements'
+
+        - head of website:
+        <header> </header>
+        - Navigation Bar:
+        <nav> </nav>
+        - section is a part of the content of website:
+        <section></section>
+        - side bar:
+        <aside></aside>
+        - each part inside section there is article:
+        <article></article>
+        - the footer of website
+        <footer></footer>
+
+    -->
+
+    <!--
     -->
 </body>
 
