@@ -443,17 +443,79 @@
 
 
 
+        another input types:
+
+        <input type="file">  // to upload file or image......
+
+        <input type="search">  // to search 
+
+        <input type="url">    // link input only accepts URL type
+
+        <input type="date">    // to choose date and set date
+
+        <input type="month">   // to choose month
+
+        <input type="time">    // to choose time mints and hour, PM , AM
 
 
+        <input list="programming" name="prog">  // to make list same select but the difference here you can make search inside it
+
+        <datalist id="programming">    connect between id and list
+            <option value="Python">
+            <option value="C#">
+            <option value="C++">
+            <option value="C">
+            <option value="Java">
+            <option value="JS">
+            <option value="GO">
+        </datalist>
 
 
+        attributes important for form:
+        - novalidate: so for testing we add this attribute inside form tag so when you add it so you can submit to test
+        - target= "_blank"also this inside form so when you submit it will not reset the information that you fill it will open new window
+    -->
 
+    <!--
+        
+        - <q></q>     //Inline element,,, it used to write qoute or Wise sentence or special sentence it will add qoutes between
 
+        - <blockqoute> </blockqoute> // it's same <q> element but it's block element
 
+        - <button>Click</button>     // button to make specific action, most of use is inside JS
+
+        - <wbr> //word break you choose the place inside long link to make break in this exact points 
+
+        - <bdi></bdi>  // <p><bdi>السلام عليكم</bdi>2-You are Welcome</p> عزل العنصر اذا تداخل المحتوى الانكليزي مع العربي
+
+        - <code> </code>    //to write programming code and can target it inside css and style it
+
+        - <pre></pre>    // to respect the spaces and new lines between the words it will keep all the spaces as you write it exactly
+                            // you can use it <code></code> inside it when you wrote programming code
+        
+        - <iframe src="www.mywebsite.com" width="400px" height="400px"></iframe>     // to put page inside you page or map from google maps
+        
     -->
 
 
+    <!--
 
+        Accessibility: ARIA
+        label: is very important for accessibility and connect it with its input
+        dev tools inside browser: lighthouse checker
+
+        attributes important:
+        role: we mentioed that the div below is same behavious of checkbox
+        aria-checked = use it to make check on this div when the page loaded set it true if false it will not checked
+        tabindex = if you want to move between the divs below through tab button, you must set tabindex attribute
+        aria-labelledby = if you want to connect he div with label 
+
+        - <div role="checkbox" aria-checked="true" tabindex="0" aria-labelledby="plan1">Plan One</div>
+        - <label for="plan1">Plane One Label</label>
+        - <div role="checkbox">Plan Two</div>
+        - <div role="checkbox">Plan Three</div>
+
+    -->
 
 </body>
 
