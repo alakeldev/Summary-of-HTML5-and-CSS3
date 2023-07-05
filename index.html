@@ -285,12 +285,176 @@
             <track src="agffd.vtt" kind="subtitles" srclang="en" label="English"> Important tag for translation or description for whose blind or cannot hear
             <track src="agffd.vtt" kind="subtitles" srclang="de" label="German">
         </video>
+
+        preload attribute: specifies if and how the author thinks that the media file should be loaded when the page loads.
+        The preload attribute allows the author to provide a hint to the browser about what he/she thinks will lead to the best user experience. This attribute may be ignored in some instances.
+        Note: The preload attribute is ignored if autoplay is present.
     -->
 
     <!--
-        Form:
+        Form: Important element in each website special in contact us page
+        <form>
+            <label>Username: </label>            // it describes the input after it
+            <input type="text">        // it's Inline element, self closing tag, type text
+            <label>Password: </label>           // it describes the input after it
+            <input type="password">        // it's Inline element, self closing tag, type password
+            <input type="submit">           // it's Inline element, self closing tag, type submit (button to submit the form)
+        </form>
+
+        Important attributes inside the form:
+        - required attribute: it means that this field is required you cannot submit without fill this field
+        <form>
+            <input type="text" required>
+            <input type="password" required>
+            <input type= "submit">
+        </form>
+
+        - placeholder attribute: if you want to skip label before the input, important to use it if the label not used and many use cases
+                                    also if you want to say a hint like "please write a complex password"
+        <form>
+            <input type="text" required placeholder="don't start with number">
+            <input type="password" required placeholder="write a complex password">
+            <input type= "submit">
+        </form>
+
+        - value attribute: we can set a value as default value of this field when the page loaded
+        <form>
+            <input type="text" required placeholder="don't start with number">
+            <input type="password" required placeholder="write a complex password">
+            <input type="text" placeholder= "write a valid Email" value="abode@gmail.com"> value it's default value of this field
+            <input type="email" placeholder= "write a valid Email" value="abode@gmail.com"> it's Email type it must be include @ in this field
+            <input type= "submit" value="Save"> the save word will show on the button instead of submit
+        </form>
+
+        - name attribute: it's an attribute to know each field value that will send to the backend file so the value known there with its name
+        Note: you can see this data with its name through browser dev tools ==> network ==> index ===> query string parameters
+        <form>
+            <input type="text" required placeholder="don't start with number" name="user">
+            <input type="text" required placeholder="write your subject" name="subject">
+            <input type="password" required placeholder="write a complex password" name="pw">
+            <input type="email" placeholder= "write a valid Email" value="abode@gmail.com" name="mail"> value it's default value of this field
+        </form>
+
+        - attributes inside form element itself:
+        * action attribute: if we don't set value for the action so it will send the data to same page that you are
+        <form action="alakel.php" method="POST or GET"> //the value of action here put the file that will receive this form information in the backend
+            <input type="text" required placeholder="don't start with number">
+            <input type="password" required placeholder="write a complex password">
+            <input type="text" placeholder= "write a valid Email" value="abode@gmail.com"> value it's default value of this field
+            <input type="email" placeholder= "write a valid Email" value="abode@gmail.com"> it's Email type it must be include @ in this field
+            <input type= "submit" value="Save"> the save word will show on the button instead of submit
+        </form>
+
+        * method attribute: has two main values: GET and POST
+            GET: it will show the data in the url when you submited it
+            POST: it will NOT show the data in the url when you submited it
+
+
+
+        More types from input:
+        - <input type="hidden" value="alakel"> // it's inside the page but it's hidden and not appear on the page,,,it has many use cases
+        - <input type="reset"> // button to make reset to all fields inside form,,,,empty the full form fields
+        - <input type="color" name="color">   // to set color by hexcode color
+        - <input type="range" name="range" min="0" max="100" step="10" value="20"> // it's range you can set the start and end point
+                                                        //also the step each time if you want to sent from where start by using value attribute
+        - <input type="number" name="number" min="10" max="100" step= "5"> // accepts only numbers
+
+
+
+
+        another part from attributes:
+        - readonly:
+        - disabled:
+        - autofocus
+        <form>
+            <input type="text" required placeholder="don't start with number" name="user" readonly> // you cannot change it, it's only read and it will be send with submit
+            <input type="text" required placeholder="write your subject" name="subject" autofocus>
+            <input type="password" required placeholder="write a complex password" name="pw">
+            <input type="email" placeholder= "write a valid Email" value="abode@gmail.com" disabled> // you cannot change it also this data will not send with submit to the backend
+
+        </form>
+        - minlength: 
+        - maxlength:
+        <input type="password" required placeholder="write a complex password" name="pw" minlength="10"> minimum 10 characters
+        <input type="password" required placeholder="write a complex password" name="pw" maxlength="20"> maximum 10 characters
+
+
+
+
+
+
+
+        another types on inputs (important) with new attributes:
+
+        - Radio: one choice
+        <input type="radio" name="operating-system" value="windows" checked> // checked attribute will be checked on this after page loaded
+        <label>Windows</label>
+        <input type="radio" name="operating-system" value="linux" id="linux-system">
+        <label for="linux-system">Linux</label>                   // for attribute and id attribute to connect the input with its label
+        <input type="radio" name="operating-system" value="mac">
+        <label>MAC</label>
+
+        - checkbox: multiple choice
+        <input type="checkbox" name="operating-system" value="windows" checked> // checked attribute will be checked on this after page loaded
+        <label>Windows</label>
+        <input type="checkbox" name="operating-system" value="linux" id="linux-system">
+        <label for="linux-system">Linux</label>                   // for attribute and id attribute to connect the input with its label
+        <input type="checkbox" name="operating-system" value="mac">
+        <label>MAC</label>
         
+
+        - select: it has options and you can choose from this option one, or more option from these options
+        without attribute multiple the user can only choose one option if you add multiple attribute to the select you can choose more than one
+        <label for="car">Choose Car:</label>
+        <select name="cars" id="car" multiple>
+            <option value="KIA brand">KIA</option>  // the value attribute which will send to the backend when you will submit
+            <option value="BMW brand">BMW</option>  // the value attribute which will send to the backend when you will submit
+            <option value="Hunday">HUNDAY</option>  // the value attribute which will send to the backend when you will submit
+            <option value="Honda">HONDA</option>    // the value attribute which will send to the backend when you will submit
+        </select>
+
+        - you can make categories inside the select input, also selected attribute to select by default when page loaded
+        <select name="cars" id="car">
+            <optgroup label="original Car Brands">
+                <option value="KIA brand">KIA</option>  // the value attribute which will send to the backend when you will submit
+                <option value="BMW brand" selected>BMW</option>  // the value attribute which will send to the backend when you will submit
+                <option value="Hunday">HUNDAY</option>  // the value attribute which will send to the backend when you will submit
+                <option value="Honda">HONDA</option>    // the value attribute which will send to the backend when you will submit
+            </optgroup>
+            <optgroup label="Fake Car Brands">
+                <option value="KIA branddd">KIA</option>  // the value attribute which will send to the backend when you will submit
+                <option value="BMW branddd">BMW</option>  // the value attribute which will send to the backend when you will submit
+                <option value="Hundayyy">HUNDAY</option>  // the value attribute which will send to the backend when you will submit
+                <option value="Hondaaaa">HONDA</option>    // the value attribute which will send to the backend when you will submit
+            </optgroup>
+            <optgroup label="Korean Car Brands">
+                <option value="KIA brandde">KIA</option>  // the value attribute which will send to the backend when you will submit
+                <option value="BMW brandde">BMW</option>  // the value attribute which will send to the backend when you will submit
+                <option value="Hundayee">HUNDAY</option>  // the value attribute which will send to the backend when you will submit
+                <option value="Hondaaa">HONDA</option>    // the value attribute which will send to the backend when you will submit
+            </optgroup>
+            
+        </select>
+
+
+
+        - textarea element: to write a message inqurey,,,paragraph or note
+        <textarea name="subject" cols="30" rows="40" placeholder="Write Your Text Here"> </textarea>
+
+
+
+
+
+
+
+
+
+
     -->
+
+
+
+
 </body>
 
 </html>
