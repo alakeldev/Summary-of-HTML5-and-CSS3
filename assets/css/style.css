@@ -1,0 +1,197 @@
+/*
+What is CSS?
+- Cascade Style Sheet
+- Language to create the presentation and visuals
+*/
+/*-------------------------------------------------------------------*/
+/*
+CSS syntax and deceleration:
+Selector {
+    Property: Value;
+    Property: Value;
+}
+
+Selector => Class or ID or Element tag(p, div, a,.....)
+
+Example:
+p {
+    color: red;
+    font-size: 40px;
+}
+
+*/
+
+/*
+If you want to target all the p Elements inside the html page: by using element tag with targeting
+p {
+
+}
+
+If you want to target specific P element inside the html page: by using the class name 
+.special {
+    color: blue;
+}
+
+
+If you want to target by ID:
+#special {
+    color: red;
+}
+
+*/
+/*-------------------------------------------------------------------*//*-------------------------------------------------------------------*/
+/*
+Three way to call CSS code:
+
+Internal Style:
+Using style tag inside html page
+<style>
+</style>
+
+Inline style:
+within the tag inside the html page
+<p style="color: blue"> My Paragraph blue </p>
+
+External Style:
+using external file style
+same our example this file style.css
+
+Important notes:
+please be note that the most power style between these three is the inline style 
+
+it's not prefer to use inline style because the html files were template and already finished compilation and build
+so it's better to use css file is already available inside the server can edit without any issues.
+
+*/
+/*-------------------------------------------------------------------*//*-------------------------------------------------------------------*/
+/*
+Name Convention:
+In CSS the best practice to name the classes:
+Kebab case:
+Example
+.user-text {
+    color: red;
+}
+*/
+/*-------------------------------------------------------------------*//*-------------------------------------------------------------------*/
+/* Background Property */
+
+div {
+    background-color: red; /* Color Name*/
+    background-color: green; /* Color Name*/
+    background-color: blue; /* Color Name*/
+    background-color: white; /* Color Name*/
+
+    background-color: rgb(255, 0, 0); /* Red Green Blue => result red*/
+    background-color: rgb(0, 255, 0); /* Red Green Blue => result green*/
+    background-color: rgb(0, 0, 255); /* Red Green Blue => result blue*/
+    background-color: rgb(0, 0, 0); /* Red Green Blue => result black*/
+    background-color: rgb(255, 255, 255); /* Red Green Blue => result white*/
+    background-color: rgb(0 0 0 / 50%); /*Red Green Blue (a)Alpha Channel (الشفافية)*/
+
+    background-color: #FF0000;  /* RR GG BB => the values between 00 to FF in Hexadecimal*/
+    background-color: #00FF00;  /* RR GG BB => the values between 00 to FF in Hexadecimal*/
+    background-color: #0000FF;  /* RR GG BB => the values between 00 to FF in Hexadecimal*/
+    background-color: #FFFFFF;  /* RR GG BB => the values between 00 to FF in Hexadecimal*/
+    background-color: #000000;  /* RR GG BB => the values between 00 to FF in Hexadecimal*/
+
+    background-image: url("../readme-images/css3html5.jpeg");
+
+    background-repeat: repeat; /* Default value for this property is Repeat => it will repeat the photo all over the page (Element size)*/
+    background-repeat: no-repeat; /* It will stop the photo repeat */
+    background-repeat: repeat-x; /* it will repeat x line */
+    background-repeat: repeat-y; /* it will repeat y line */
+
+    background-attachment: scroll; /*default value for this property is scroll (the photo stay in one place and not move)*/
+    background-attachment: fixed; /*fixed value make the photo fixed and move when you go down(scrolling down it's stuck on screen) */
+
+    /* Move the background photo*/
+    background-position: left top; /* position x , position y  with this property move the photo place*/
+    background-position: left center; /* position x , position y  with this property move the photo place*/
+    background-position: left bottom; /* position x , position y  with this property move the photo place*/
+    background-position: right bottom; /* position x , position y  with this property move the photo place*/
+    background-position: center top; /* position x , position y  with this property move the photo place*/
+    background-position: center center; /* position x , position y  with this property move the photo place*/
+    /*Move the background photo with pixels and %*/
+    background-position: 100px 200px; /* left , top */
+    background-position: 30% 50%; /* left x , top  */
+
+
+    /* You can control the size of photo to fill the content*/
+    background-size: auto; /* Default value it's appear the photo with its normal size on the page */
+    background-size: cover; /* it fill the content all (maybe photo stretch or cut from the photo(Part from it)) Important */
+    background-size: contain; /* Make resize for the photo to make the full photo appear not part of it on the page Important */
+    background-size: 300px 200px; /* width=300px, height= 200px */
+    background-size: 40% 50%; /* width=40%, height= 50% */
+
+
+    /*Short hand for background property*/
+    /*background: ; */
+
+
+    /*-------------------------------------------------------------------*/
+
+    /* Padding property => inside the element*/
+    padding: 10px;  /* in all the ways (top, right, bottom, left)*/
+
+    padding: 10px 20px;  /* Here the result is (top: 10px, right: 20px, bottom: 10px, right: 20px)*/
+
+    padding: 10px 20px 15px; /*Here the result is (top: 10px, right: 20px, bottom: 15px, left: 20px)*/
+
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+
+    /* Very Important note: please the Padding don't accept Negative value at all */
+    /* Also Note the padding accept % as a value*/
+
+    /*-------------------------------------------------------------------*/
+
+    /* Margin Property => out side the element */
+
+    /* Very Important note: the Margin accept Negative Value */
+    /* also the margin accept % asa value*/
+    margin: 10px; /* in all the ways (top, right, bottom, left) */
+
+
+    /*
+    if we have a scinario that we want an element take 70% from the size of the conatiner father
+    and we want to center it inside this container
+
+    div {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    if we change the width of the element it will damage because of we specifiy the exact value 15%
+
+
+    but the best practice to make as per below:
+    div {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    the auto value mean in both(left-right) take the rest amount of with 30% equality between left and right so it will be daynamic
+    if in future change the width so it will not effect the margin and it will be in the center too.
+    (the browser will control and take the rest amount of width equality between both)
+    */
+
+    /*-------------------------------------------------------------------*/
+
+    /* Border element (size , color, style)*/
+
+    border-width: 10px; /* Top:10px, right:10px, bottom:10px, left:10px */
+    border-color: red; /* top: red, right: red, bottom: red, left: red */
+    border-color: red green; /* top: red, right: green, bottom: red, left: green */
+    border-style: solid dashed; /* top: solid, right: dashed, bottom: solid, left: dashed */
+    /* solid...dashed..dotted...double....groove  most useful values are: solid and dashed only */
+
+
+    border: 10px solid red; /* Short hand code for border */
+
+}
+    /*-------------------------------------------------------------------*/
+
