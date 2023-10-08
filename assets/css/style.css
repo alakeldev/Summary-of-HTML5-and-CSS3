@@ -132,6 +132,10 @@ div {
     /*-------------------------------------------------------------------*/
 
     /* Padding property => inside the element*/
+    /*
+    please be note that the padding will effect the original width so it will increase it as example
+    if the width 300 and we add padding 10px from the left and right so the total width will be 320px
+    */
     padding: 10px;  /* in all the ways (top, right, bottom, left)*/
 
     padding: 10px 20px;  /* Here the result is (top: 10px, right: 20px, bottom: 10px, right: 20px)*/
@@ -181,8 +185,12 @@ div {
 
     /*-------------------------------------------------------------------*/
 
-    /* Border element (size , color, style)*/
-
+    /* Border property of the element => (size , color, style)*/
+    /*
+    please be note that the border will effect the original width so it will increase it as example
+    if the width 300 and we add element border 10px from the left and right so the total width will be 320px
+    */
+    /* in css3 the box-sizing will make the border not take from the width of the element */
     border-width: 10px; /* Top:10px, right:10px, bottom:10px, left:10px */
     border-color: red; /* top: red, right: red, bottom: red, left: red */
     border-color: red green; /* top: red, right: green, bottom: red, left: green */
@@ -192,6 +200,42 @@ div {
 
     border: 10px solid red; /* Short hand code for border */
 
+
+    /* Outline */
+    /* 
+    please be note that the outline will not effect on width the outline it's not same of border or the padding
+    it will not effect the width
+    you cannot control each side or way same the border, you can only set one value
+    */
+    outline: 10px solid blue;
+    outline-style: solid; /* only one value*/
 }
     /*-------------------------------------------------------------------*/
 
+
+/* Display property */
+span {
+    display: inline-block;
+    display: block;
+    display: inline;
+}
+/*
+it's responsible how to appear and display the element on your page.
+
+Block: example: div
+- If you didn't specify a width, so it will take the full width
+- Add line Break before and after it
+- Respect the padding, Margin, Width, Height
+
+Inline: example: span
+- Don't respect width and height
+- Don't add Line break before and after!! , allow the elements come before and after it
+- respect the padding and margin only from left and right
+
+Inline-Block:
+- allow the elements come before and after it 
+- Respect padding, margin, width, height in all the sides
+- Don't add new line before and after it
+*/
+
+    /*-------------------------------------------------------------------*/
