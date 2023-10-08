@@ -239,3 +239,66 @@ Inline-Block:
 */
 
     /*-------------------------------------------------------------------*/
+
+/* Element Visibility and use cases */
+
+/* 
+display: none;   it means the element not visible on my page 
+the use cases the button see more so when you press on see more it will make the element from display none to visible so you can see
+
+when you make display: none for element it will remove it from the page at all disappear.
+
+visibility: visible;    the default value of this property visible
+
+when you make visibility: hidden; it will keep the place of the element but it will be hidden element you cannot see it on the page
+
+*/
+
+    /*-------------------------------------------------------------------*/
+
+/* Grouping multiple selectors */
+/* Example below: */
+.one,
+.two,
+.three,
+.four,
+p {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #eee;
+}
+
+
+/* Nesting "Very Important" */
+div p {
+    color: red;
+}
+
+div .special {
+    background-color: red;
+}
+
+/* Dimensions Width and Height */
+/*
+width:
+min-width: 400px;   this property mean if you want element stretch as the content so you give 400px minimum but it can be stretch if
+the content need more.
+max-width: 400px;    this property mean the element cannot stretch more than 400px 
+
+
+*******Very Important: if you want to be the size of element exactly the size of the content you can use:
+width: fit-content;
+the div stay display block and the size will be fit content exactly as the size of the content.*******
+
+height:
+height 40 that's mean cannot go further more than 40px
+min-height: 40px; that's mean it will start from 40px and can be stretch if the content needs more
+max-height: 60px; that's mean it will stopped at 60px and cannot be stretch more than 60px
+*/
+div {
+    display: inline-block;
+    min-width: 400px; /* so the element can be stretch */
+    max-width: 400px; /* so the element cannot be stretch more than 400px */
+    min-height: 40px; /* so the element can be stretch and starts from 40px */
+    max-height: 60px; /* so the element cannot be stretch more than 60px */
+}
