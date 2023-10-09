@@ -283,7 +283,7 @@ div .special {
 width:
 min-width: 400px;   this property mean if you want element stretch as the content so you give 400px minimum but it can be stretch if
 the content need more.
-max-width: 400px;    this property mean the element cannot stretch more than 400px 
+max-width: 400px;    this property mean the element cannot stretch more than 400px, it stop the stretch 
 
 
 *******Very Important: if you want to be the size of element exactly the size of the content you can use:
@@ -301,4 +301,80 @@ div {
     max-width: 400px; /* so the element cannot be stretch more than 400px */
     min-height: 40px; /* so the element can be stretch and starts from 40px */
     max-height: 60px; /* so the element cannot be stretch more than 60px */
+}
+
+
+/* Overflow property X and Y */
+
+div {
+    overflow: visible; /* the default value of overflow is visible so it can be seen the overflow */
+    overflow: hidden; /* the over content will be hidden and not show on the page */
+    overflow: scroll; /*  it gives you scroll to see the over content */
+    overflow: auto; /* it will auto if the content over and needs scroll so it will show scroll if not it will hide the scroll design*/
+    overflow-y: hidden; /*it will hide the over content on y line side only*/
+    overflow-x: hidden; /* it will hide the over content on x line side only */
+}
+
+/*color, shadow properties (Dealing with text) */
+div {
+    color: #f9f9f9; /*you can use hexcode for the color property not only the names */
+    /*
+    Text Shadow:
+    syntax
+    text-shadow: H-Shadow V-shadow Blur Color
+    */
+    text-shadow: -4px, 10px, 5px, rgb(255 2 2 / 24%);
+}
+
+
+/* Text Alignment and Direction and Vertical alignment Properties */
+/* the default of the web page direction is ltr because it's english.*/
+
+div {
+    text-align: center; /* will keep the text in center */
+    text-align: right; /* will keep the text in right */
+    text-align: left; /* will keep the text in left (default value)*/
+
+    direction: ltr; /* left to right (Page Direction )the default value */
+    direction: rtl; /* right to left (Page Direction) for arabic language */
+
+    vertical-align: top; /* if you have photo and you need to align vertically this photo with the text beside */
+    vertical-align: bottom; /* if you have photo and you need to align vertically this photo with the text beside */
+    vertical-align: middle; /* if you have photo and you need to align vertically this photo with the text beside */
+}
+
+/* Text Decoration and Transformation */
+div {
+    text-decoration: line-through; /* it will make a line through the text */
+    text-decoration: underline; /* it will make a underline the text */
+    text-decoration: overline; /* it will make a over line the text */
+    text-decoration: none;  /* the most use cases if when we use a element and we want to delete the underline of this link */
+
+    text-transform: capitalize; /* the first letter capital */
+    text-transform: uppercase; /* all the letters capital */
+    text-transform: lowercase; /* all the letters lower case */
+}
+
+/* Text Spacing */
+
+div {
+    letter-spacing: 2px; /* the space between letters is will accept negative value and positive value*/
+    letter-spacing: -10px; /* the space between letters is will accept negative value and positive value*/
+
+    text-indent: 50px; /* the white-empty space before the text (before starting the text) 
+    some use cases when you want display programming code on the page, also if you want to set the text out of the page you cannt see it
+    text-indent: -999999px;..
+    */
+
+    line-height: 1; /* the space between the lines but vertically  1 = 100%  , 1.5 = 150%  2= 200%  the best value 1.6 = 160% */
+
+    word-spacing: 1px; /* the space between all words it will accept negative value and positive values */
+
+    white-space: normal; /* default value: when it reach to the limit of the width the white space property go down to the next line and continue in the next line*/
+    white-space: nowrap; /*it will stay in the same line and continue without go to the next line and reuined the content*/
+
+    word-break: normal; /*default value*/ 
+    word-break: break-word; /*it will break the word and contiue in the next line when it reach to max width*/ 
+    /*the most use cases if you have a link and there is no space like one word so you want to use word-break property
+    to break the link and  continue on a new line without over text go outline the element */
 }
