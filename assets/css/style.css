@@ -371,10 +371,243 @@ div {
     word-spacing: 1px; /* the space between all words it will accept negative value and positive values */
 
     white-space: normal; /* default value: when it reach to the limit of the width the white space property go down to the next line and continue in the next line*/
-    white-space: nowrap; /*it will stay in the same line and continue without go to the next line and reuined the content*/
+    white-space: nowrap; /*it will stay in the same line and continue without go to the next line and it reuined the content*/
 
     word-break: normal; /*default value*/ 
     word-break: break-word; /*it will break the word and contiue in the next line when it reach to max width*/ 
     /*the most use cases if you have a link and there is no space like one word so you want to use word-break property
     to break the link and  continue on a new line without over text go outline the element */
 }
+
+
+/* Text overflow property it's only for text*/
+
+div {
+    overflow: hidden; /* this it will hide the content over the element */
+    text-overflow: ellipsis; /* this is will show that some of the text cut and hide because of width no place with three points ... */
+
+}
+
+div:hover {
+    overflow: visible; /* here we add an hover event that when we hover on the element we can see the full text without and hide from
+    it the over content */
+}
+
+/* In heritance */
+/*if the propety already exist in the son it will not be inherit from the father */
+body {
+    font-family: Arial, Helvetica, sans-serif; /*can be inherit from the body father*/
+}
+
+div {
+    text-align: center; /*This property can be inherit from the father */
+    padding: 20px; /*cannot be inherit from the father */
+    background-color: #eee; /*cannot be inherit from the father */
+    font-size: 20px; /*can be inherit from the father if not exist inside the son */
+    border: 2px solid red;
+}
+
+div p {
+    border: 2px solid ;
+    border-color: inherit; /*it will be inherit from the div father so it will be red borders*/
+    padding: inherit; /*it wil be inherit from the div father so it will be the same padding of div */
+}
+
+/* Font Family property */
+
+/*Web safe fonts: examples: Arial verdana Helvetica ...........*/
+
+/*Web fonts from google : https://fonts.google.com/*/
+
+div {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Font size and css units */
+/*
+
+px
+
+em  => Time
+default font size for webpage is 16px 
+the em it's time for the font size that inherit so it's a time from the inherit font
+example:
+div {
+    font-size = 40px;
+}
+
+div p {
+    font-size = 2em;  => here is means that the 2em = 80px 
+}
+
+rem => Root time (Root element = HTML element)
+
+
+percentage => font-size: 100%; it means that the font-size same 100% exact the father if you wrote 150% it means that 1.5 time 
+exact that if you have the fater 20px and the son 150% so the exact result is 30px 
+
+
+
+vw => view port width:    it's very useful because it will change the size of the font daynamic way.
+if we have the width of the port/webpage or window = 900px
+div {
+    font-size: 5vw; => it means that 5 x 9 = 45px
+}
+
+
+vh => view port height also read about it to know the information
+vmin => same the rest just read to know the information
+*/
+
+
+/* Font style, Font Variant, Font Weight */
+
+div {
+    font-style: italic; /*it will change the style of the word like make it a little bit style italic and oblique */
+    font-variant: small-caps; /*it will change the letters to capital letters but smaller than the normal font */
+    font-weight: bold; /* it will make the font bold */
+    font-weight: 300; /* it will make the font weight it depends on the font style that you generate from google fonts */
+    font-weight: normal; /*it will reset to normal (Without bold)*/
+}
+
+/* Mouse Cursor */
+
+span {
+    cursor: pointer; /*Here it changed the cursor design to a click hand that shows it's a button */
+    cursor: grab; /*Grab that you want to grab things or take things */
+    cursor: move;
+}
+
+/* Float and Clear properties */
+/*It is the old property to organise the elements on the layout and webpage */
+
+
+.parent {
+    background-color: red;
+    padding: 10px;
+    /*overflow: hidden; /*it needs always in parent with using float inside the children + set a height for the parent  (Don'T USE IT
+    IT'S VERY BAD WE ONLY SHOW THAT'S A VERY BAD WAY TO FIND A SOLUTION FOR THE FLOAT OVERFLOW NOT A SOLUTION AT ALL )*/ 
+}
+
+.parent div {
+padding-top: 10px;
+padding-bottom: 10px;
+text-align: center;
+background-color: #eee;
+/*display: inline-block; it will not work with float property and don't use it to organise the element on the layout very bad way*/
+width: 25%; /*we choose 25% because the number of divs inside the parent are 4 divs so the width equal to 100% / 4 = 25% */
+float: left; /* the organise of elements will start from left to right */
+float: right; /* the organise of elements will start from right to left */
+}
+
+
+/*we add a new element inside html page inside the parent and last child inside it  we set the value of its class property
+to clear value to set the propety clear to this element so this element has now clear property */
+.clear {  /*Here we set clear class inside it clear property */
+    clear: both; 
+}
+
+/* Calc Property Important to organise with float property very useful */
+body {
+    margin: 0;
+}
+
+div {  /*in this example: we have 4 divs here*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #eee;
+    width: 23.75%; 
+    float: left; 
+    margin-left: 1%;
+    }
+
+/*
+Content Width is : 100%
+i want 5 spaces   | element | element | element | element |     here we see the | as a space so the total is 5 spaces 
+5 spaces => 1% * 5 = 5% from the content width
+100% - 5% = 95%
+4 elements the width is : 95% / 4 = 23.75%
+
+*/
+
+
+/*another example: */
+
+body {
+    margin: 0;
+}
+
+div {  /*in this example: we have 4 divs here*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #eee;
+    width: 17.6%; 
+    float: left; 
+    margin-left: 2%;
+    }
+
+/*
+Content Width is : 100%
+i want 6 spaces   | element | element | element | element | element |    here we see the | as a space so the total is 6 spaces 
+6 spaces => 2% * 6 = 12% from the content width
+100% - 12% = 88%
+5 elements the width is : 88% / 5 = 17.6%
+
+
+
+/*another example: BUT WITH USING THE CALC important*/
+
+body {
+    margin: 0;
+}
+
+div {  /*in this example: we have 4 divs here*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #eee;
+    width: calc(88% / 5); 
+    float: left; 
+    margin-left: 2%;
+    }
+
+/*
+Content Width is : 100%
+i want 6 spaces   | element | element | element | element | element |    here we see the | as a space so the total is 6 spaces 
+6 spaces => 2% * 6 = 12% from the content width
+100% - 12% = 88%
+5 elements the width is : 88% / 5 = 17.6%
+
+
+/* you can use calc with all properties*/
+
+
+
+
+/*another example: BUT WITH USING THE CALC important*/
+
+body {
+    margin: 0;
+}
+
+div {  /*in this example: we have 4 divs here*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #eee;
+    width: calc(100% - 90px) / 5; 
+    float: left; 
+    margin-left: 15px; /*Here we change to px not % Important*/
+    }
+
+/*
+Content Width is : 100%
+i want 6 spaces   | element | element | element | element | element |    here we see the | as a space so the total is 6 spaces 
+6 spaces => 15px * 6 = 90px from the content width
+100% - 90px 
+5 elements the width is : (100% - 90px) / 5 
+
+
+/*Opacity*/
