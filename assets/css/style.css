@@ -470,6 +470,8 @@ div {
     font-weight: normal; /*it will reset to normal (Without bold)*/
 }
 
+/*-------------------------------------------------------------------*/
+
 /* Mouse Cursor */
 
 span {
@@ -477,6 +479,9 @@ span {
     cursor: grab; /*Grab that you want to grab things or take things */
     cursor: move;
 }
+
+
+/*-------------------------------------------------------------------*/
 
 /* Float and Clear properties */
 /*It is the old property to organise the elements on the layout and webpage */
@@ -609,5 +614,98 @@ i want 6 spaces   | element | element | element | element | element |    here we
 100% - 90px 
 5 elements the width is : (100% - 90px) / 5 
 
+/*-------------------------------------------------------------------*/
 
 /*Opacity*/
+
+.one {
+    background-color: rgb(255 0 0 / 0.1); /* here is the alpha channel*/
+
+}
+.two {  /*the ddifferent between opacity and alpha channel the opacity control the full element not only the backgrond same .one 0.1*/
+    opacity: 1; /*the element appear 100%*/
+    opacity: 0.7; /*the element appear 70%*/
+    opacity: 0.563; /*the element appear 56%*/
+}
+
+
+/*-------------------------------------------------------------------*/
+
+/* position property */
+
+/*
+- static => default value  (left right top bottom) not effect on it if you set the position as static 
+- relative => move as relative بناء على نفسه لا يؤثر على المحتوى اللي جنبه
+- absolute => if you set absolute it's out of the work flow and maybe will go over the other element because it's out of the work flow
+the absolute move throught property left: 20px this will move the element from left بناء على الصفحة 
+- fixed  => move بناء على الصفحة بغض النظر عن المكان و ينزل معك بس تعمل سكرول
+- sticky => position: sticky;   and   top: 10px;   when will reach to top 10px so the element will stick with you as nav bar will
+stick with you when you scroll down and use the nav bar easy way
+*/
+
+/*
+Important:
+if you want to make element move inside a parent element you must set position property for the parent as relative and the son 
+you must set it as absolute and move the element as you like by left buttom top right as you like.
+*/
+
+/*-------------------------------------------------------------------*/
+
+
+/*Z-index*/ /* the big number is over the small number
+please be note the z-index will not work without position property */
+/*
+z-index: 3; over element 1 and 2
+z-index: 9999; over all elements
+z-index: 2; only over element 1
+z-index: 1; it's the lowest and down element 
+
+اذا بدك تعمل عنصر ورا كل العناصر بتحط قيمة البروبرتي -1
+
+*/
+
+/*-------------------------------------------------------------------*/
+
+/*Lists styling*/
+
+ul {
+    list-style-type: lower-latin;  /* to make the count and style type for the unordered list */
+    list-style-position: outside; /* default is outside it will be out side so the bullets and style out side the li */
+    list-style-image: url(""); /*if you want to put image instead of the default bullets */
+    list-style: none; /*important */
+    padding-left: 0;
+    margin: 0;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+/* Table styling */
+
+table {
+    width: 100%;
+    border-spacing: 0px; /*the space between the table elements*/
+    
+
+
+}
+
+table td {
+    padding: 15px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+
+}
+
+table thead td {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-color: #aa0000;
+}
+
+/*-------------------------------------------------------------------*/
+
+/*Pseudo classes*/
+
