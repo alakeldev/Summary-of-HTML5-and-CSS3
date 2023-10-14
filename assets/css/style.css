@@ -708,4 +708,293 @@ table thead td {
 /*-------------------------------------------------------------------*/
 
 /*Pseudo classes*/
+/* Example: */
 
+a{
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+.ch:checked + label {           /* ch it's an input checkbox */
+    color: red;
+}                  
+
+a:visited {
+    color: blue;
+}
+
+div:empty {             /*Div empty not childs inside */
+    border: 10px solid red;
+}
+
+
+
+in:focus {  /* input text*/
+    border-color: blue;
+    outline: none;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+/*Pseudo elements*/
+
+/* below we put the first letter inside span then we control it and put style for it*/
+.one span {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+
+/* below we didn't access to the html code to put the first letter in span, here we used pseudo element to make same exactly same above*/
+.two::first-letter {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+
+
+.three::first-line {  /*it's here pseudo element, the first line inside the paragraph*/
+    font-weight: bold;
+    color: green;
+}
+
+
+
+::selection {   /*for all website content if you select context inside the webpage default color is blue for the selection here want*/
+    background-color: black;                    /*  to change the color when you select the context inside the webpage*/
+    color: yellow;
+}
+
+
+/*--*/
+/* Pseudo element (before and after) content */
+
+.parent {    /*Counter to count with using the content*/
+    margin-bottom: 20px;
+    overflow: hidden;
+    counter-increment: members-counter;  /*Here you can put the value as you like for the property counte-increamt it's only the name*/
+}
+
+.one {   /*one it's a div*/
+    position: relative;
+}
+
+/*.one::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100px;
+    right: -10px;
+    top: 0;
+    background-color: #009687;
+}*/
+
+.one::after {   /*Here we put a counter to count the divs automatic al put the number beside the content*/
+    content: counter(members-counter);
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: bold;
+    right: -10px;
+    top: 50%;
+    margin-top: -10px;
+}
+
+/*.one::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    margin-top: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #009687 transparent transparent;
+}*/
+
+.one::before {  /*Here you can add the value of any attribute inside the html page so you can add it here and add style to it*/
+    content: attr(data-text);  /*here we have attrbiute in html element page ------> data-text = "Something" */
+    display: none;
+}
+
+.one:hover::before {
+    display: block;
+}
+
+/*
+you can also add a value for the content property url add photo voice file,,,,it's not useful at all !!!!!!
+content: url();
+*/
+
+
+
+/*another example for pseudo element with ul*/
+ul {
+    list-style: none;
+}
+ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+ul li::before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    margin-top: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #009687 transparent transparent;
+}
+
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* Vendors Prefixes the browsers developers(Chrome - Safari - Firefox - IE,Edge - Opera) */
+
+/*
+
+- New css feauter appeared.
+- Browsers tests the feauter in version x.
+- Browsers add prefix to give developers the ability to use it.
+- The feauter is fully supported in version y, no need for prefix.
+
+
+
+-webkit => chrom-safari-new opera version
+-moz => firefox
+-ms => IE- Edge
+-o => old version from Opera
+*/
+
+.class {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* 
+to check the feauter if it wants to add the vendros for it check the website below:
+    caniuse.com
+*/
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/*Border radius property*/
+
+div {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    margin: 20px auto;
+    /*border-radius: 50%; /* it needs the 4 values for 4 sides (top, right, bottom, left) and the default value is 0 for all sides*/
+    /*border-radius: 10px; /* it needs the 4 values for 4 sides (top, right, bottom, left) and the default value is 0 for all sides*/
+
+    /*border-top-left-radius: 20px 10px;     here it needs two values or you can write one because control the two side of the peak */  
+    /*border-bottom-right-radius: 20px 5px;  here it needs two values or you can write one because control the two side of the peak */
+
+}
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+
+/* Box Shadows and examples */
+/* box shadow make shadow for the element it self not only the ext same property text shadow*/
+/*
+box-shadow: h-shadow | v-shadow | blue | spread(مساحة انتشار الشادو) | color | inset
+*/
+
+div {
+    padding: 20px;
+    background-color: #eee;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 0 0 0 #ddd inset; 
+    box-shadow: 10px 8px 5px 20px rgb(0 0 0 / 5%), 10px 8px 5px 20px #00f, 10px 8px 5px 20px red; 
+}
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* Box model and box sizing */
+
+* {
+    box-sizing: content-box; /*the default value of box-sizing it means that any additional border or padding will increase the width and height*/
+    box-sizing: border-box; /* the width and hieght will include the border and padding without adding more one height and width */
+}
+
+/*to respect the width and height you must put values for both then the border-box will respect these two for each element*/
+
+
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+
+
+/* Transition IMPORTANT : to control the element when its changing from status to status moving, color changing, size changing.,....*/
+
+/*
+Transition:
+Duration
+Property
+Delay
+Timing Function
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+.one {
+    background-color: #eee;
+    width: 200px;
+    height: 100px;
+
+    transition-duration: 3s;   /*needs the time by s = 1 or ms = 1000*/
+    transition-delay: 2s;        /*default value is 0, it needs the time by s = 1 or ms = 1000*/
+
+    transition-property: all;  /*All default value it means on all the property*/
+    transition-property: margin-left, margin-top;  /* here we choose on which properties want to effect the transition process */
+
+    transition-timing-function: ease; /*ease is the default value it control the transition timing curve (slow fast slow)*/
+    transition-timing-function: linear; /*ease is the default value it control the transition timing curve (same speed to end)*/
+    transition-timing-function: ease-in; /*ease is the default value it control the transition timing curve (slow normal)*/
+    transition-timing-function: ease-out; /*ease is the default value it control the transition timing curve (normal slow)*/
+    transition-timing-function: ease-in-out; /*ease is the default value it control the transition timing curve (slow normal slow)*/
+
+    /*Short hand for all above */
+    transition: width 2s, heigh 1s; /*Property , Duration*/
+    transition: all .5s 2s linear; /*Property , Duration, Delay, Timing Function*/
+}
+
+.one:hover {  /*because of all for transition property so it will effect on all the properties below*/
+    margin-left: 20px;    
+    margin-top: 20px;
+    width: 280px;
+}
+
+/*Check the link for: developer.mozilla.org/en-US/docs/web/CSS/CSS-animated-properties */
+
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/*Important Declaration and use cases  !*/
