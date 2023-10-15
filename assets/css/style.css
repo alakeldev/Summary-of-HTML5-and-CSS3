@@ -1159,3 +1159,164 @@ so it's very important to use it.
 */
 
 /*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* Filters 
+you can search for more filters below we only show three types of filters it's on images and incons
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    transition: 0.3s;
+    filter: grayscale(100%);
+    filter: Blur(4px);
+    filter: invert(100%);
+}
+
+img:hover {
+    filter: grayscale(0);
+    filter: Blur(0);
+    filter: invert(0);
+}
+
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* Gradients Colour CSS Gradiant it's similar to image */
+
+div {
+    /* linear-gradient(Direction || Angel , color stop1, color stop2...color stop..)*/
+    background-image: linear-gradient(to right, red 50%, green 20px, blue 10px, yellow);  /*to left, to right, to top, to bottom*/ /* 0deg = to top - 90deg = to right*/
+                                                                                                        /*to bottom = 180deg  - to left = 270deg */
+    width: 400px;                                                          
+    height: 200px;
+    background-color: #eee;
+    
+}
+/*Important to see the linear gradient below to understand how to make line decoration with 5 colors to decore the div in the top*/
+div::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    height: 10px;
+    background-image: linear-gradient(to right, #2980b6 20%, #27ae60 20%, #27ae60 40%, #d35400 40%, #d35400 60%, #8e44ad 80%, #c0392b 80%);
+}
+
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* Pointer events and caret color */
+
+input {
+    caret-color: red;   /*to change the caret color when you focus on the input type text or if you focus on p editable or ...*/
+
+}
+
+
+/* very important that pointer-events: none user before with hangman game so when you choose letter to check if this letter correct or not
+so if it not so it will add a class that there is property inside this class that make pointer-event: none; on this letter to cancel
+any event on it and also make opacity: .4; and backgroun-color: black; */
+a {
+    pointer-events: none;  /*here you cancel any event on this element and as per below there is event when you hover or something else
+    all it will be cancel these events */
+}
+
+a:hover {
+    color: red;
+    
+}
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* Grid Parent */
+/*
+
+Parent properties:
+
+- display: grid;  if you have another element beside the parent you can set display: inline-grid;
+
+- grid-template-columns => number of columns in => [px, %, auto, repeat(5, auto) => 5 columns - auto = same size all, MIX ALL, Fraction]
+
+what is the different between auto and fraction => Fraction is greedy, auto is Shy 
+
+
+- grid-template-rows => Number of rows height in => [px, %, auto, Fraction, Repeat(2, auto)=> repeat(rowsnumber, size), MIX]
+
+
+both properties below are to make gap between the rows and columns
+- row-gap: 20px;
+- column-gap: 20px;
+
+shorthand:
+- gap: 20px 20px;  =>Syntax => gap: [row gap] [column gap]
+
+
+Horizintal:
+- Justify-content: flex-end;  take the content and move it to the start or center or end 
+(if you used fraction so it will effect with this property so better to use auto if you want to use this property)
+flex-start;
+center;
+space-between; the different between space between here and flexbox. here you can without set width on each element so you can use
+it in the parent and effect in all elements perfect
+space-around;
+space-evenly;
+
+Vertical: 
+- align-content: flex-start;
+flex-end
+space-between
+space-around
+space-evenly
+
+
+*/
+* {
+    box-sizing: border-box;
+}
+
+.parent {
+    margin: 20px auto;
+    width: 800px;
+    height: 500px;
+    background-color: #eee;
+
+    display: grid;
+
+
+    grid-template-columns: 100px 300px 25% auto repeat(2, auto); /*each one is a column*/
+    grid-template-columns: 100px 100px 1fr 2fr; /*if the balance after deduct 100px and 100px we have 600px so here in fraction will take
+    1fr => 200px and the 2fr => 400px */
+    grid-template-columns: auto repeat(2, auto) 1fr repeat(2, 1fr); /*total width here 800px so now auto will take 55px 55px take the minimum width that 
+    sutiable for its content but the fraction is greedy will take the all balance width 345px 345px //these number from example only*/
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-rows: 100px; /*we set only the first row is 100px and the rest will be take other rows*/
+    grid-template-rows: 100px 200px 100px; /*first row 100px second row 200px third row is 100px*/
+    grid-template-rows: 20% 30% 70%;
+    grid-template-rows: 200px auto auto;
+
+    grid-template-rows: repeat(3, 1fr);
+
+    row-gap: 20px;
+    column-gap: 20px;
+
+
+    gap: 20px 20px;
+}
+
+.parent div {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*----*//*----*//*----*//*----*/
