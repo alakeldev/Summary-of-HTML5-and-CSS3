@@ -997,4 +997,56 @@ Timing Function
 
 /*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
 
-/*Important Declaration and use cases  !*/
+/* Important Declaration and flag  !*/
+
+.one {
+    background-color: red !important;
+}
+
+/* the margin collapse */
+/*
+## only the vertical margin collapse
+## Bigger margin win and set between the two elements
+## the collapse happend between two elements if no other element between them
+## Nesting Will not prevent the collapsing
+*/
+
+
+
+/* CSS Variables */
+
+/*
+Global scope Variable
+Local scope Variable
+
+Always put the variables inside the root
+
+when you want to use the variable inside property you must use function name var(Variable name, Fallback Value)
+*/
+
+:root {
+    --mainColor: blue;
+    --mainPadding: 10px;
+
+}
+
+.main {
+    background-color: var(--mainColor, black);
+    padding: var(--mainPadding);
+}
+
+h2 {
+    background-color: var(--mainColor, black);
+    padding: var(--mainPadding);
+}
+
+h3 {
+    padding: calc(20px + var(--mainPadding));
+}
+
+.local {
+    --mainColor: black;   /*Local scope Variable*/
+    background-color: var(--mainColor);
+}
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
