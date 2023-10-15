@@ -1050,3 +1050,112 @@ h3 {
 }
 
 /*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+
+/* Flex Box */
+/*
+Properties for Parent:
+- display: flex  => to initiate the flexible box
+- flex-direction: row => default value of this property is row    
+row-reverse (change the row direction without changing the page direction)
+column
+column-reverse
+
+                                ****note: if you go the body element and change the direction of the page to arabic as below 
+                                body {
+                                    direction: rtl;
+                                }*******
+
+- flex-wrap:  nowrap(default value), wrap => it's responsible for the over content or over element
+wrap any extra element it will push it to the next line, default value it will come beside the rest of elements
+
+wrap-reverse the extra element will come in the first line and the rest of elements will come to the next line 
+
+
+- Shorthand => flex-flow: row wrap;  [flex-direction , flex-wrap]
+
+
+[Horizontal]
+- justify-content: flex-start; (flex-start is the default value)   
+flex-end; 
+center; 
+space-between;
+space-around;
+space-evenly;   => (space-between + space around)
+
+
+[Vertical]
+- align-items: stretch; (stretch is the default value) if you don't set specific height for each element so it will stretch to fit the height of the parent
+if you increase the height of the element so it will effect on the parent and will increase the height of the parent
+
+flex-start; it will make the content inside the parent in the start Verticaly
+flex-end; it will make the content inside the parent in the end Verticaly
+center;
+
+
+
+align-content: stretch; (stretch is the default value) you control the full content inside the parent
+flex-end;
+flex-start;
+space-around;
+space-between;
+space-evenly;
+
+
+
+
+
+
+
+Properties for Child:
+
+- flex-grow: 0; => default value it means it will not grow to fit the balance size of the parent
+- flex-grow: 1; it must be extra width to make the item that you set the flex-grow: 1; to it to grow more 
+
+- in one of the elements child we set flex-grow: 3; that means this element if there is a size to grow X3 so it's going to grow more 
+than other element three times
+
+
+- flex-shrink: 1; => default value 1 it means nothing happen, here when you set this property to specific element that means 
+you want from that exact element to shrink first example
+flex-shrink: 3; so the shrink when you decrease the width of the parent so the item will be effect first and shrink more than other elements
+
+
+order: 0;   => default value is 0
+
+if you want to set item last in the row layout so you sent property order: 6;
+order: 5;
+order: 4;
+order: 3;
+
+
+
+- flex-basis: auto; => default value (auto)
+flex-basis means it's related to the height and width not only the width because if you set flex-basis: 300px;
+it means that if you sent the flex-direction: column; so it will change that flex-basis to 300px height 
+so it's better so use flex-basis not width or height inside the child element
+
+note max-width will effect the flex-basis and you can stop flex-basis by using max-width
+
+
+short hand:
+
+- flex: [flex Grow] [Flex Shrink] [Flex Basis]  0 1 auto;  => default value
+
+
+
+
+Important Note: if you set display: inline-flex; for flex parent if you want to make another element come 
+beside the flex parent but you set for this element display: inline-block;
+
+
+- align-self: auto; => default value is auto 
+
+here we can understand it same if you set in the flex parent property align-items: flex-start;
+you take specific element inside this parent then set a property align-self: flex-end;
+so it's very important to use it.
+
+
+*/
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
