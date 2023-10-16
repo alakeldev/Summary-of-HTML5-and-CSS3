@@ -1508,4 +1508,20 @@ default values or this property => 50% 50% 0
 
 2D transform => transform-origin( x , y )
 3D transform => transform-origin( x , y , z )
+X-Axis
+- CSS unit [px-em-rem]
+- %
+- Keyword:
+left = 0%
+center = 50%
+right = 100%
+
+Y-Axis
+- CSS unit [px-em-rem]
+- %
+- Keyword:
+top = 0%
+center = 50%
+bottom = 100%
+
 */
