@@ -1399,3 +1399,113 @@ ch if you want to set how many characters want to put read about ch related to G
 /*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
 
 /* 2D Transform Scale */
+/* this make the element change its status in the 2D and later in 3D */
+/*
+scaleX
+scaleY
+scale      / for both x and y
+
+
+- example
+transform: scaleY(2);
+transform: scaleX(2);
+transform: scale(2, 3); in scale if you write only one value so the second value will take from the first one so if you wrote only 2 so the second one is 2 also
+
+
+if you wrote negative value the element will flip and it depends on which scale x or y
+
+transform: scaleY(-1);
+transform: scaleX(-1);
+transform: scale(-1, -3); in scale if you write only one value so the second value will take from the first one
+
+
+
+
+- Rotate with this property you can make the element turn around by itself
+* deg => degree
+* rad => Radians   6.28 rad == 360 deg   = 1 turn 
+* grad => Gradians  400 grad == 360 deg  = 1 turn
+* turn => Turn      
+
+it accept negative values and will go around to the other side 
+
+*/
+
+.image {
+    overflow: hidden;
+}
+
+.image img {
+    transition: 0.3s;
+}
+
+
+.image:hover img {
+    transform: scale(1.3) rotate(5deg); /*Here it will make nice zoom in on the photo and little bit rotate*/
+    opacity: 0.6;
+}
+
+
+
+/*
+- transform: translate   this property to move the element on x line and y line
+
+transform: translate(x, y); if you write only one value so the second value will be 0
+accept negative value
+
+transform: translate(-100px, -200px);
+transform: translate(20%, -30%);
+
+transform: translate(-50%, -50%);
+
+
+
+
+
+- Skew انحراف
+transform: skewY(-22deg);
+transform: skewX(40deg);
+transform: skew(40deg, 0);
+
+
+*/
+
+h2 {
+    position: relative;
+    color: white;
+    margin: 20px auto;
+    width: fit-content;
+    padding: 20px;
+}
+
+h2::before {
+    content: "";
+    background-color: red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: skewX(20deg);
+}
+
+/*
+Matrix
+syntax => matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+
+transform: matrix(1, 0, 0, 1, 100, -50); here you only wrote numbers without px or deg or turn or ......
+
+
+*/
+
+
+/*
+Transform-origin
+Syntax 
+
+default values or this property => 50% 50% 0
+
+2D transform => transform-origin( x , y )
+3D transform => transform-origin( x , y , z )
+*/
