@@ -1320,3 +1320,82 @@ space-evenly
 }
 
 /*----*//*----*//*----*//*----*/
+/*    Please check the file train.css there is a good example to understand the grid property with try.html page*/
+
+
+/* Grid Child properties */
+/*
+
+grid-column: [grid column start, girld column end] the end not include
+with this property to merge two or more columns
+example: 
+- grid-column: 1 / 5 ;   it will take and merge from 1 column till 4 the 5 not include
+
+if you don't know the exact end that you want, you want to take place for 4 columns wihtout put exact end column follow below:
+- grid-column: span 4;
+
+if you want to start from column 4 and you don't know the column that you to end at... follow below:
+- grid-column: 2 / span 3;   start from column 2 and then take three columns
+
+
+
+
+grid-row: [grid row start , grid row end ] the end not include
+grid-row: 1 / 4;
+grid-row: span 3;   three rows 
+
+I can say it's same the grid column bit with rows 
+
+Very Very Important property:
+grid-area: [Grid row start][Grid column start][Grid row end][Grid column end]
+grid-area: 2 / 2 / 5 / 6;  you want to start from row and column also end in row and column
+
+
+
+in the parent element
+
+grid-template-areas: "head head nav nav nav" "cont cont cont cont cont"; it means will take 2 columns related to head , 3 columns related to nav
+the next row the 5 columns related to cont
+
+
+
+in the child
+
+grid-area: head;
+
+
+in the child
+grid-area: nav;
+
+in the child
+grid-area: cont
+
+/*----*//*----*//*----*//*----*/
+/*----*//*----*//*----*//*----*/
+/*----*//*----*//*----*//*----
+
+
+grid-template-columns: minmax(200px, 400px) repeat(2, 1fr);  here with minmax it means that minimum must be 200px and if you have
+extra size get 400px so in this example will take the maximum 400px
+so the minmax is more power than fraction but if you sent fixed size instead of fraction so it will go to the less than 400px till 200px
+
+
+
+if you want to go with responsive with grid property VERY VERY VERY IMOIRTANT FOR THE REPOSNIVE LAYOUT
+
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+
+
+
+
+
+
+Read about:
+Auto fit   realted to GRID
+ch if you want to set how many characters want to put read about ch related to Grid
+*/
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/* 2D Transform Scale */
