@@ -1508,7 +1508,7 @@ default values or this property => 50% 50% 0
 
 2D transform => transform-origin( x , y )
 3D transform => transform-origin( x , y , z )
-X-Axis
+X-Axis you can write and use below as values in x:
 - CSS unit [px-em-rem]
 - %
 - Keyword:
@@ -1516,7 +1516,7 @@ left = 0%
 center = 50%
 right = 100%
 
-Y-Axis
+Y-Axis you can write and use below as values in y:
 - CSS unit [px-em-rem]
 - %
 - Keyword:
@@ -1524,4 +1524,170 @@ top = 0%
 center = 50%
 bottom = 100%
 
+Example:
+
+transform-origin: 0 50%;
+transform: rotate(110deg); if you start increase this value with developer tools so you can see that the element with turn around at point
+that you set in transform-origin in x axis = left and y axis = center
+
+check the link for more understand this property: https://codepen.io/shshaw/full/pOVKjb
+
 */
+
+/*
+3D transform
+
+transform: rotate3d(x ,y ,z , deg)
+x , y and z the values are accept between 0 or 1 only 
+then you can see how the element move in 3d vision with using z beside the x and y 
+
+
+examples
+transform: rotateY(80deg);
+transform-origin: left top;
+or
+transform: rotateX(50deg)
+transform-origin: right bottom;
+
+
+
+* translate property in 3d
+
+transform: translate3d(x , y , z);
+transform: translateZ();
+
+to make the translate3d or Z only work you must set a property on the parent element:
+
+* prespective: 300px; to set the space between me and the son element so it can be move to me or away from me 
+
+another property set to the parent element to imagin that we are see the son element from another side like from top or bottom or left
+and we want this element to come to use and to move to our side that we are like top or bottom and we must set with it the previous property
+prespective without it the property below will not work perfectly:
+
+* prespective-origin: center center; (default  value  is center center)تحدد المكان المنظور بيبدأ منه
+
+
+
+
+
+3d transform
+* backface-visibility
+* transform-style
+* flip product
+
+check trin css and 3d html page to see the details of this lesson
+
+
+
+*/
+
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/*Animation Section Impoartant*/
+
+@keyframes change-color {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: blue;
+    }
+
+}
+
+@keyframes change-colour {
+    0% {
+        background-color: red;
+    }
+    30% {
+        background-color: black;
+    }
+    75% {
+        background-color: blueviolet;
+    }
+    100% {
+        background-color: blue;
+    }
+}
+
+
+
+div {
+    animation-name: change-color;
+    animation-duration: 6s;
+
+
+}
+
+/*make spinner loading Example*/
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #e8e3e3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    border-radius: 50%;
+    border: 5px solid #e91e63;
+    border-left-color: transparent;
+
+
+    animation-name: spin;
+    animation-duration: 1s;
+
+    animation-iteration-count: infinite;
+    animation-iteration-count: 2;
+
+    animation-timing-function: ease; /*default value*/
+    animation-timing-function: linear; 
+
+
+    animation-direction: normal; /*default value*/
+    animation-direction: reverse;
+    animation-direction: alternate; /*بتمشي لقدام و بترجع مرة تانية بترجع بتمشي لقدام بترجع بتمشي لورا*/
+    animation-direction: alternate-reverse; /* بتمشي لورا و بترجع مرة تانية بترجع بتمشي لقدام بترجع بتمشي لورا*/
+
+
+
+    animation-delay: 2s;
+    animation-delay: -3s; /*accept negative value but that's mean that animation already started from 3s so start from there you it start */
+
+    animation-fill-mode: none; /*default value is none, this property make the element take style from last keyframe*/
+    animation-fill-mode: forwards; /*it fixed the style that taking from the last keyframe from the animation and fixed this style on the element
+    without change it */
+    animation-fill-mode: backwards; /*it fixed the style that taking from the first keyframe from the animation and fixed this style on the element
+    without change it*/
+    animation-fill-mode: both; /*here the property animation direction will control and depends on that which one will fixed of the element state*/
+
+
+    animation-play-state: running; /*default value is running*/
+    animation-play-state: paused; /*this property make the animation stopped for example you can use it when you hover on the element
+    stop the animation of the element */
+
+
+    /*short hand of the animation property*/
+    animation: colour 3s linear 2s infinite reverse;  
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*very good example to understand more about animation properties in trin.css and animation.html page*/
+
+/*-*---------------------------*/
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+/*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*//*----*/
+
+/*Slectors refernce */
+
