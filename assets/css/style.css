@@ -1962,3 +1962,160 @@ div::selection {           when you select the div text inside this div will be 
 
 
 */
+
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+
+/* Media Queries and Responsive intro */
+/*
+@media condition {
+
+}
+
+example:
+
+@media print {      here we set media queries for print state when you press control and p to print the page then this styles will set on
+    div {
+        font-size: 100px;
+    }
+
+    p {
+        display: none 
+    }
+}
+
+
+
+@media (max-width: 1000px) {
+    div {
+        background-color: blue;
+    }
+}
+
+
+
+@media (min-width: 1400px) {
+    div {
+        background-color: blue;
+    }
+}
+
+
+
+@media (min-width: 1000px) and (max-width: 1400px) {
+    div {
+        background-color: blue;
+    }
+}
+
+
+/*-----------------------------------------------------
+
+please be note for below:
+you can write a new file on the html file and link for as per below to set the css style rules for only print state
+
+inside html page
+
+<link rel="stylesheet" href="css/print.css" media="print"/>  when we set the media print inside html file so this file the style will not
+set or initiate except on the print state only
+
+or
+
+<link rel="stylesheet" href="css/print.css" media="(min-width: 1000px) and (max-width: 1400px)"/>  
+when we set the media print inside html file so this file the style will notset or initiate except on the width that we set above only
+
+
+
+or
+
+inside html file too
+<style media="print">
+    div {
+        color: red;
+    }
+</style>
+
+
+
+the best way to initiate the media quiery is to put the media queriy for the element below the element too
+
+
+
+Media Standards: 
+
+Mobile 
+@media (max-width: 767px) {
+
+}
+
+Tablet
+@media (min-width: 768px) {
+
+}
+
+medium screens 
+@media (min-width: 992px) {
+
+}
+
+large screens
+@media (min-width: 1200px) {
+
+}
+
+Xlarge screens
+@media (min-width: 1400px) {
+
+}
+
+Custom media 
+@media (max-width: 1199px) {
+
+}
+
+
+*/
+
+
+
+/* Create Your Framework */
+
+/*
+Bootstrap
+tailwindcss 
+
+
+
+.center-position {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+*/
+
+/*Global Values in CSS*/
+/*
+inherit => inherit from the parent
+initial => default value of this property it return to default value of the property 
+unset => if the property can be inherit => so unset = inherit
+        if the property can NOT be inherit => so unset = initial
+
+all => it means all the properties 
+
+all: unset
+all: initial
+
+
+revert css level4 => 
+revert it's the same work of initial but it returns and set the properites for the element from the user agent(browser)
+
+
+*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
