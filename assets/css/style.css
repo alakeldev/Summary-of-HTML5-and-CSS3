@@ -1691,3 +1691,274 @@ div {
 
 /*Slectors refernce */
 
+/*
+
+* - it select all the element inside the page
+
+Element => [p, div, h2]
+
+Element otherElement => div p  
+
+.class-name
+
+#id-name
+
+.parent .child
+
+.class-one.class-two    (without space between the classes that you want to target one element that has these two classes exactly)
+
+.class-name div
+
+.class-name div, .class-name p    (Grouping)
+
+Element.class-name => example: p.class-name   here it means that two condition to set the rules must be Paragraph and also same class name
+
+
+.class-name > .child => here it means direct child      Important to understand
+
+
+
+-------------------------------------------------------------------------------------------------
+
+Element + Other Element => div + p   it means that the next selector  in our exmaple it must be div then p so the p will style 
+
+
+Element ~ Other Elements => Target the Siblings (Brothers)  p ~ div    here all divs after the p in the same level and same siblings will be style it
+
+
+[Attribute]   example:  only with this attribute
+[title] { 
+
+}
+
+
+Element[Attribute]  example:  here it means it must be element and has the attribute too
+div[title] {
+
+}
+
+[Attribute = Value]  Example only with this attribute and its value also
+
+
+Element[Attribute = value] example:  here it means it must be element and has the attribute and its value equal too
+
+inpute[type=="search"]
+inpute[type=="submit"]
+
+
+
+[Attribute~=Value] => contains a word  حصرا كلمة منفصلة و ليس جزء من كلمة
+
+[Attribute*=Value] => contains a string اي كلمة او جزء من كلمة ياخدهن كلهم
+
+[Atribute^=Value] => start with a String  تبتدي بهذا المحرف او الكلمة
+
+
+-------------------------------------------------------------------------------------------------
+
+:first-child  
+
+p:first-child {       here it means that p and it must be this paragraph the first child of its parent
+
+}
+
+
+:last-child
+
+p:last-child {        here it means that p and it must be this paragraph the last child of its parent
+
+}
+
+
+
+:first-of-type
+
+p:first-of-type {       paragraph and it must be the first one of its type
+
+}
+
+
+
+:last-of-type
+
+p:last-of-type {  paragraph and it must be the last one of its type
+
+
+}
+
+
+
+
+:only-child
+
+p:only-child {       here it means that paragraph and this paragraph must be the only child of its parent
+
+}
+
+
+
+: only-of-type
+p:only-of-type {  here it means that paragraph and this paragraph must be hte only type child of its parent so the parent can has
+    another childs but in different type element and not paragraph
+
+}
+
+
+
+
+-------------------------------------------------------------------------------------------------
+
+
+
+:not(Selectors)
+
+p:not(:first-child) {   here it means all the paragraph except the paragraph that be the first child of its parent
+
+}
+
+
+p:not(.special) {   here it means all paragraph except the paragraph with class= special
+
+}
+
+
+
+*//*************************************
+
+:nth-child(n)
+
+p:nth-child(2) {  here i'm search on paragraph that be second child of its parent
+
+}
+
+
+p:nth-child(1) {  here i'm search on paragraph that be first child of its parent
+
+}
+
+p:nth-child(4) {  here i'm search on paragraph that be fourth child of its parent
+
+}
+
+
+p:nth-child(even) {    here it means paragraph with even number such 2 child and 4 child 6 child,,,,  
+
+}
+
+
+p:nth-child(odd) {    here it means paragraph with odd number such 1 child and 3 child 5 child,,,,  
+
+}
+
+check this website for more details: https://nthmaster.ru/
+
+
+
+
+
+:nthn-last-child() {
+
+}
+
+
+p:nthn-last-child(2) {  it means paragraph and must be the before last child so it means 
+the element 2 from last child not last one before the last one
+
+}
+
+
+
+
+
+
+
+
+
+:nth-of-type(n) {}
+
+
+
+p:nth-of-type(3) {   i need the paragraph exactly this type and it must be the third one,,,,here it set the type that i want to count 
+    not the number of element same child and last child
+
+
+}
+
+
+:nthn-last-of-type(1) {  here you target the type not the child so it will be target the last div
+
+}
+-------------------------------------------------------------------------------------------------
+
+
+
+
+:root => html tag
+
+
+:checked   => attribute available inside the elements that you can make check on it you target all checked elements
+
+
+input[type="checkbox"]:checked + label {           herre very important to use in real life scenrious 
+
+
+}
+
+
+
+:empty  => it means any element empty inside the page
+you can use it with table to target the empty cell for example
+
+div:empty {
+
+}
+
+
+
+
+:disabled     => you can target the disabled selector
+
+input:disabled {
+    color: red;
+    opactiy: 0.2;
+}
+
+
+
+:required   => you can target the required seclector
+
+input:required + span:before {
+    content: "*";
+    color: red;
+}
+
+
+
+:focus  => you can target the element when you focus on it
+
+input:focus {
+    border: 2px solid red;
+}
+
+
+
+
+::selection
+
+div::selection {           when you select the div text inside this div will be the selection not normal blue it will be as you set
+    background-color: black;
+    color: white;
+}
+
+
+
+
+::placeholder     change the color of placeholder for the cell
+
+
+::placeholder {
+    color:red;
+}
+
+
+*/
